@@ -7,8 +7,10 @@
     "pages/login/main",
     "pages/foodDetail/main",
     "pages/Apply/main",
-    "pages/selectHead/main"
-   
+    "pages/selectHead/main",
+    "pages/order/main",
+    "pages/searchHeadOrder/main",
+    "pages/orderSuccess/main"
   ],
   "permission":{
      "scope.userLocation":{

@@ -52,3 +52,8 @@ export function get(url, data) {
   export function post(url, data) {
     return request(url, 'POST', data)
   }
+
+  export function getLocalTime(nS) {     
+    //转换时间戳的方法
+    return new Date(parseInt(nS)).toLocaleString().replace(/:\d{1,2}$/,' ');     
+ }

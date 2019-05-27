@@ -15,7 +15,7 @@
      <div class="myorder">
           <p>我的订单</p>
           <div class="orderwap">
-            <div><img src="../../../static/icon/daifukuan.png" alt=""><span>待支付</span></div>
+            <div><img src="../../../static/icon/daifukuan.png" alt="" @click="toMyorder"><span>待支付</span></div>
             <div><img src="../../../static/icon/daifahuo.png" alt=""><span>待收货</span></div>
             <div><img src="../../../static/icon/qiandao.png" alt=""><span>已完成</span></div>
             <div><img src="../../../static/icon/shanchu.png" alt=""><span>已取消</span></div>
@@ -24,7 +24,7 @@
      <div class="list">
        <ul>
          <li @click="toApply" v-if="appl"> <img src="../../../static/icon/zengjia.png" alt=""> 成为团长</li>
-          <li v-if="!appl"> <img src="../../../static/icon/zengjia.png" alt=""> 下单查看</li>
+          <li @click="toHeaderOrder" v-if="!appl"> <img src="../../../static/icon/zengjia.png" alt="" > 下单查看</li>
           <li v-if="!appl"> <img src="../../../static/icon/mongey1.png" alt=""> 佣金管理</li>
          <li> <img src="../../../static/icon/weixinzhifu.png" alt=""> 优惠卷</li>
          <li> <img src="../../../static/icon/wode.png" alt=""> 切换团长</li>
@@ -78,11 +78,20 @@ export default {
               this.appl = false
             }
         },
+        async toMyorder(){
+              wx.navigateTo({
+                url: '/pages/order/main',
+              });
+        },
         toApply(){
           wx.navigateTo({
             url: '/pages/Apply/main'
           });
           
+        },
+        toHeaderOrder(){
+          wx.navigateTo({ url: '/pages/searchHeadOrder/main',});
+            
         }
       }
 }
